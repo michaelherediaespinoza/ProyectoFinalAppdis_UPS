@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">  
+
+<h:head>
+
+	<meta http-equiv="Content-Type" content="txt/html; charset=UTF8" />
+	<title> Todo suply a title </title> 
+
+</h:head> 
+<body> 
+
+	<ui:composition>
+		<h:form >
+			<h:panelGrid columns="1" style="margin: 0 auto;" border="1" >
+				<h:outputText value="Registrar Nuevo" />
+	
+				<p:commandButton action="/insert-carreras" value="Univerdidad" >
+						<f:attribute name="tipo" value="nuevo" />
+						<f:attribute name="titulo" value="Univerdidad" />
+					</p:commandButton>
+				<h:commandButton action="/create-carreras" value="Carreras" >
+						<f:attribute name="tipo" value="top" />
+						<f:attribute name="titulo" value="Carreras" />
+					</h:commandButton>
+				<p:commandButton action="#{libroBean.libros}" value="Noticias" >
+						<f:attribute name="tipo" value="top" />
+						<f:attribute name="titulo" value="Noticias" />
+					</p:commandButton>
+				<p:commandButton action="#{libroBean.libros}" value="Grupo ASU" >
+						<f:attribute name="tipo" value="top" />
+						<f:attribute name="titulo" value="Clienetes Top	" />
+					</p:commandButton>
+				<p:commandButton action="#{libroBean.libros}" value="Evento" >
+						<f:attribute name="tipo" value="top" />
+						<f:attribute name="titulo" value="Evento" />
+					</p:commandButton>									
+			</h:panelGrid>		
+		</h:form>	
+	</ui:composition>
+</body> 
+</html>

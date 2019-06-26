@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+ <link href="/resources/css/style.css" rel="stylesheet" type="text/css" />
+</h:head> 
+<body> 
+<ui:composition template="/template.xhtml">
+<ui:define name="body">
+
+<div id="contenedor">
+
+<h:form>
+	<h:panelGrid columns="3" style="margin: 0 auto;">
+	
+		<h:outputLabel value="Nombre Carrera" />
+		<h:inputText value="#{carreraBean.newCarrera.nombre}" id="txtnombre"/>
+		<h:message for="txtnombre" />
+		
+		<h:outputLabel value="Descripción" />
+		<h:inputText value="#{carreraBean.newCarrera.descripcion}" id="txtemail" />
+		<h:message for="txtemail" />
+
+		<h:outputLabel value="Imagen" />
+		<h:inputText value="#{carreraBean.newCarrera.imagen}" id="txtimagen" />
+		<h:message for="txtemail" />
+				
+		<h:inputHidden value="#{carreraBean.edit}" />
+		<h:commandButton action="#{carreraBean.guardar()}" value="Guardar" />
+		
+	
+	</h:panelGrid>
+
+
+</h:form>
+
+
+<h:form>
+<h:commandButton action="list-carreras" value="LISTAR CARRERAS" />
+</h:form>
+
+</div>
+
+
+
+
+</ui:define>
+
+</ui:composition>
+
+
+
+</body> 
+</html>

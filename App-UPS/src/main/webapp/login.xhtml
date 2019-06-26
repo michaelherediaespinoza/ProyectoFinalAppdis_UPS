@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head>
+
+<link rel="stylesheet" href="resources/css/style.css"/>
+
+</h:head>
+<body style="background-color:#FF0000;"> 
+<ui:composition template="/template2.xhtml">
+<ui:define name="body">
+
+<div id="contenedor">
+
+  <p:growl id="mensajes" showDetail="true" life="2000" />
+  <h:form prependId="false" id="form" styleClass="styleGreen">
+    <p:panel header="Login" style="width: 500px; position:relative; left:500px">
+      <h:panelGrid columns="2" cellpadding="5">
+        <h:outputLabel for="username" value="Usuario:" />
+        <p:inputText value="123" id="username"
+           required="true" label="username" />
+        <h:outputLabel for="password" value="Contraseña:" />
+        <p:password value="123" id="password" required="true"
+           label="password" />
+           
+		<f:facet name = "footer">
+		<h:panelGroup style = "display:block; text-align:center">
+        <h:commandButton action="create-carreras" value="Iniciar Sesión" />
+        </h:panelGroup>
+        </f:facet>
+        
+        <h:messages globalOnly="true" style="color:red;margin:8px;" />
+      </h:panelGrid>
+    </p:panel>
+  </h:form>
+
+
+</div>
+
+</ui:define>
+</ui:composition>
+
+</body> 
+</html>

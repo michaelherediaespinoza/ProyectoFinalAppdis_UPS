@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+
+	<title>PLANTILLA</title>
+	<link type="text/css" rel="stylesheet" href="resources/css/style.css" />
+</h:head> 
+ <body> 
+
+	<div id="contenedor">
+		<div id="cabecera">
+			<ui:insert name="header">
+				<ui:include src="/comun/cabeceralogin.xhtml" />
+			</ui:insert>
+		</div>
+		<div id="cuerpooo">
+			<ui:insert name="body">
+				<ui:include src="/comun/cuerpo.xhtml" />
+			</ui:insert>
+		</div>
+	
+	</div>
+
+ </body> 
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head> 
+<body> 
+<ui:composition template="/template2.xhtml">
+<ui:define name="body">
+
+<div id="contenedor">
+<h:form>
+<h:panelGrid columns="1" style="margin: 0 auto;">
+ 
+
+<p:commandButton action="create-carreras" value="CARRERAS" />
+<br />
+<p:commandButton action="crud-carreras" value="NOTICIAS" />
+<br />
+<p:commandButton action="create-evento" value="EVENTOS" />
+<br />
+<p:commandButton action="crud-carreras" value="GRUPOS ASU" />
+<br />
+<p:commandButton action="crud-carreras" value="IMAGENES" />
+
+
+ 
+</h:panelGrid>
+</h:form>
+
+
+</div>
+
+</ui:define>
+</ui:composition>
+
+</body> 
+</html>

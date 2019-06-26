@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head>
+<link href="/resources/css/style.css" rel="stylesheet" type="text/css" />
+</h:head> 
+<body> 
+<ui:composition template="/template.xhtml">
+<ui:define name="body">
+
+<div id="contenedor">
+
+<h:form>
+    <p:panelGrid columns="3" border="10"  style="width:40%;margin:30px auto;" cellpadding = "8" cellspacing = "3"
+                headerClass="list-header"
+                    rowClasses="list-row-even, list-row-odd"
+                    styleClass="list-background"
+                    title="#{bundle.Checkout}">
+    
+        <f:facet name="header">
+        <h:outputText value="INFORMACIÓN EVENTOS" style="background-color: #FFE4C4" />
+        </f:facet>
+        
+     
+    
+        <p:outputLabel value="Nombre" />
+        <p:inputText value="#{eventoBean.newEvento.nombre}" id="txtnumero"/>
+        <h:message for="txtnumero" />
+            
+        <p:outputLabel value="Descripción" />
+        <p:inputText value="#{eventoBean.newEvento.descripcion}" id="txtdescripcion"/>
+        <h:message for="txtdescripcion" />
+        
+        <p:outputLabel value="FECHA" />
+        <p:inputText value="#{eventoBean.newEvento.fechaEvento}" id="txtcantidad"/>
+        <h:message for="txtcantidad" />
+        
+        <p:outputLabel value="IMAGEN" />
+        <p:inputText value="#{eventoBean.newEvento.imagen}" id="txtprecio"/>
+        <h:message for="txtprecio" />
+      
+       <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">Imagen</label>
+
+                  	<div class="col-sm-10">
+                		<h:inputFile id="file" class="textbox"  value="#{platoControler.pdao.file}"/>
+                	</div>
+                </div> 
+        
+        
+        <p:outputLabel value="Carrera" for="carrId"/>
+        <p:selectOneMenu id="carrId" value="#{eventoBean.newEvento.carrId}">
+            <f:selectItems value="#{carreraConverter.itemsAvailableSelectOne}"/>
+            <h:message for="carrId" showDetail="true" />
+        </p:selectOneMenu>
+        
+        <h:inputHidden value="#{eventoBean.edit}" />
+        
+        <f:facet name = "footer">
+        <h:panelGroup style = "display:block; text-align:center">
+        <p:commandButton action="#{eventoBean.guardar()}" value="Guardar EVENTO" />
+        <p:commandButton action="#{productoB.listProductos()}" value="Listar Productos" />
+        </h:panelGroup>
+        </f:facet>
+    
+    </p:panelGrid>
+    
+   
+   
+    <p:messages errorStyle="color: red" infoStyle="color: green" globalOnly="true"/>
+
+</h:form>
+
+
+
+
+
+</div>
+</ui:define>
+</ui:composition>
+
+
+</body> 
+</html>

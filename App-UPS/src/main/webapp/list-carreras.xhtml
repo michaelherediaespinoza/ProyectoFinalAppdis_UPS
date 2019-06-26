@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+ <link href="/resources/css/style.css" rel="stylesheet" type="text/css" />
+</h:head> 
+<body> 
+<ui:composition template="/template.xhtml">
+<ui:define name="body">
+
+<div id="contenedor">
+
+
+<h:form>
+
+<h:dataTable border="6" style="margin: 0 auto;">
+
+    <h:column>
+        <f:facet name="header">Codigo</f:facet>
+        <h:outputText value="#{carreras.codigo}" />
+    </h:column>
+    <h:column>
+        <f:facet name="header">Nombre</f:facet>
+        <h:outputText value="#{carreras.codigo}" />
+    </h:column>
+    <h:column>
+        <f:facet name="header">Descripción</f:facet>
+        <h:outputText value="#{carreras.codigo}" />
+    </h:column>
+	<h:column>
+        <f:facet name="header">imagen</f:facet>
+        <h:outputText value="#{carreras.codigo}" />
+    </h:column>
+
+    <h:column>
+        <f:facet name="header">Acciones</f:facet>
+        <h:form>
+        <h:commandButton action="#{personaBean.borrar(_persona.cedula)}" value="Borrar" />
+        <h:commandButton action="#{personaBean.editar(_persona)}" value="Editar" />
+   </h:form>
+    </h:column>
+  
+    <f:facet name="footer">
+    	<h:commandButton action="create-persona" value="Registrar Nuevo" />
+    </f:facet>
+</h:dataTable>
+
+
+</h:form>
+
+
+
+
+
+<h:form>
+
+
+<h:dataTable var="_carrera" border="6"  value="#{carreraBean.carreras}"
+    rendered="#{not empty carreraBean.carreras}"
+    styleClass="simpletablestyle">
+  
+    <h:column>
+        <f:facet name="header">CODIGO</f:facet>
+        #{_carrera.codigo}
+    </h:column>
+    <h:column>
+        <f:facet name="header">NOMBRE</f:facet>
+        #{_carrera.nombre}
+    </h:column>
+    <h:column>
+        <f:facet name="header">DESCRIPCION</f:facet>
+        #{_carrera.descripcion}
+    </h:column>
+    <h:column>
+        <f:facet name="header">IMAGEN</f:facet>
+        #{_carrera.imagen}
+    </h:column>
+    
+    <h:column>
+        <f:facet name="header">Acciones</f:facet>
+        <h:commandButton action="#{carreraBean.borrar(_carrera.codigo)}" value="Borrar" />
+        <h:commandButton action="#{carreraBean.editar(_carrera)}" value="Editar" />
+    </h:column>
+    
+    <f:facet name="footer">
+    	<h:commandButton action="create-carreras" value="Crear CARRERA" />
+    </f:facet>
+</h:dataTable>
+
+
+</h:form>
+
+
+
+
+
+
+</div>
+
+</ui:define>
+</ui:composition>
+
+</body> 
+</html>
