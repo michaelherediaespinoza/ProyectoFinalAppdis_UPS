@@ -1,11 +1,15 @@
 package ec.edu.ups.appdis.model;
 
 
+import java.util.Arrays;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
@@ -33,10 +37,14 @@ public class Evento {
 	@Column(name = "eve_image")
 	private String Imagen;
 	
+	@Lob
+	@Column(name = "eve_imagec")
+	private byte[] foto;
+	
 	
 	
 	@JoinColumn(name="fk_idcarrera", referencedColumnName="car_codigo")
-	@ManyToOne(optional=false)
+	@ManyToOne(optional=false, fetch=FetchType.LAZY)
 	private Carrera carrId;
 	
 	public int getCodigo() {
@@ -79,6 +87,14 @@ public class Evento {
 		Imagen = imagen;
 	}
 
+	public byte[] getFoto() {
+		return foto;
+	}
+
+	public void setFoto(byte[] foto) {
+		this.foto = foto;
+	}
+
 	public Carrera getCarrId() {
 		return carrId;
 	}
@@ -86,6 +102,13 @@ public class Evento {
 	public void setCarrId(Carrera carrId) {
 		this.carrId = carrId;
 	}
+
+	@Override
+	public String toString() {
+		return "Evento [codigo=" + codigo + ", nombre=" + nombre + ", descripcion=" + descripcion + ", fechaEvento="
+				+ fechaEvento + ", Imagen=" + Imagen + ", foto=" + Arrays.toString(foto) + ", carrId=" + carrId + "]";
+	}
+	
 	
 	
 }

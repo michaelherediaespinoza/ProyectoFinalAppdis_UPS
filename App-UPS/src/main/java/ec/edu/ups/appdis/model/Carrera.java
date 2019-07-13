@@ -35,7 +35,7 @@ public class Carrera {
 	
 	private String imagen;
 
-	@OneToMany(cascade = {CascadeType.ALL}, mappedBy="carrId")
+	@OneToMany(cascade = {CascadeType.ALL}, mappedBy="carrId", fetch=FetchType.LAZY)
 	//@JoinColumn(name="fk_carrera_id")
 	private List<Evento>evento;
 	

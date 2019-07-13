@@ -4,6 +4,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -25,12 +28,13 @@ public class Noticia {
 	@Column(name = "not_descripcion")
 	private String descripcion;
 	
-	
-	private int numeLike;
-	
-	private String imagen;
-	
+	@NotNull
+	@Column(name = "not_like")
+	private int numeLike=0;
 
+	@Lob
+	@Column(name = "not_imagen")
+	private byte[] foto;
 	
 	
 	public int getCodigo() {
@@ -65,14 +69,13 @@ public class Noticia {
 		this.numeLike = numeLike;
 	}
 
-	public String getImagen() {
-		return imagen;
+	public byte[] getFoto() {
+		return foto;
 	}
 
-	public void setImagen(String imagen) {
-		this.imagen = imagen;
-	}
-	
+	public void setFoto(byte[] foto) {
+		this.foto = foto;
+	}	
 	
 
 }

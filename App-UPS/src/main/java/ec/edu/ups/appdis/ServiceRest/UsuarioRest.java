@@ -67,11 +67,22 @@ public List<Usuario> getUsuarios(){
 @Path("/listarul")	
 @Produces("application/json")	
 public List<Usuario> getUsuariosL(@QueryParam("correo") String correo,@QueryParam("clave") String clave){
+	
+	
 	return ubussines.getUsuariosL(correo, clave);
 	
 	
 }
+
+@GET
+@Path("/login")	
+@Produces("application/json")	
+public String Login(@QueryParam("correo") String correo,@QueryParam("contrasenia") String contrasenia){
+	return ubussines.Login(correo, contrasenia);
 	
+	
+}
+
 
 
 }

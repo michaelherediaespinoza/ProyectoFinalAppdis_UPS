@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+      xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:p="http://primefaces.org/ui"> 
 
 <h:head>
  <link href="/resources/css/style.css" rel="stylesheet" type="text/css" />
@@ -14,25 +15,25 @@
 <div id="contenedor">
 
 <h:form>
-	<h:panelGrid columns="3" style="margin: 0 auto;">
+	<p:panelGrid columns="3" border="10" style="margin: 0 auto;" cellpadding = "8" cellspacing = "3">
 	
-		<h:outputLabel value="Nombre Carrera" />
-		<h:inputText value="#{carreraBean.newCarrera.nombre}" id="txtnombre"/>
-		<h:message for="txtnombre" />
+		<p:outputLabel value="Nombre Carrera" />
+		<p:inputText value="#{carreraBean.newCarrera.nombre}" id="txtnombre"/>
+		<p:message for="txtnombre" />
 		
-		<h:outputLabel value="Descripción" />
-		<h:inputText value="#{carreraBean.newCarrera.descripcion}" id="txtemail" />
-		<h:message for="txtemail" />
+		<p:outputLabel value="Descripción" />
+		<p:inputText value="#{carreraBean.newCarrera.descripcion}" id="txtemail" />
+		<p:message for="txtemail" />
 
-		<h:outputLabel value="Imagen" />
-		<h:inputText value="#{carreraBean.newCarrera.imagen}" id="txtimagen" />
-		<h:message for="txtemail" />
+		<p:outputLabel value="Imagen" />
+		<p:inputText value="#{carreraBean.newCarrera.imagen}" id="txtimagen" />
+		<p:message for="txtemail" />
 				
 		<h:inputHidden value="#{carreraBean.edit}" />
 		<h:commandButton action="#{carreraBean.guardar()}" value="Guardar" />
 		
 	
-	</h:panelGrid>
+	</p:panelGrid>
 
 
 </h:form>

@@ -21,7 +21,8 @@ public class EventoBussines {
 		//if(aux!=null)
 			//throw new Exception("Carrera ya registrada");
 		//else
-			edao.insertar(evento);
+			//edao.insertar(evento);
+			edao.insertarImagen(evento);
 	}
 	
 	public List<Evento>getEventos(){
@@ -42,6 +43,14 @@ public class EventoBussines {
 			throw new Exception("Registro no existe");
 		else
 			edao.update(evento);
+	}
+
+	public EventoDao getEdao() {
+		return edao;
+	}
+
+	public void setEdao(EventoDao edao) {
+		this.edao = edao;
 	}
 	
 

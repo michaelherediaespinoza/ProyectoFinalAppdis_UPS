@@ -52,6 +52,11 @@ public class UsuarioBussines {
 
 	
 	
+	public String Login(String correol, String clavel) {
+		return udao.Login(correol, clavel);
+		
+		
+	}
 	
 	//GETTERS AND SETTER
 	
